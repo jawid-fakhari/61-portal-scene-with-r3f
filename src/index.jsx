@@ -7,7 +7,7 @@ const root = ReactDOM.createRoot(document.querySelector('#root'))
 
 root.render(
     <Canvas
-        flat //flat in <Canvas> setta toneMapping a NoToneMapping, per avere i colori del belender senza influenza della luce e colore del Three.js
+        flat //flat in <Canvas> setta toneMapping a NoToneMapping, per avere i colori del belender senza influenza della luce e colore del Three.js 
         camera={{
             fov: 45,
             near: 0.1,
