@@ -1,4 +1,4 @@
-import { Center, OrbitControls, useGLTF, useTexture } from '@react-three/drei'
+import { Center, OrbitControls, Sparkles, useGLTF, useTexture } from '@react-three/drei'
 
 export default function Experience() {
     const bakedTexture = useTexture('./model/baked.jpg')
@@ -13,6 +13,7 @@ export default function Experience() {
         <color args={['#030202']} attach="background" />
         <OrbitControls makeDefault />
 
+        {/* importare Center dal drei per centrare il modello */}
         <Center>
             {/* nei modelli complessi non usiamo <Primitive /> ma creiamo mesh */}
             <mesh geometry={nodes.baked.geometry}>
@@ -40,6 +41,14 @@ export default function Experience() {
                 rotation={nodes.portalLight.rotation}
             >
             </mesh>
+
+            {/* import Sparkles dal Drei che sono floating glowing particles*/}
+            <Sparkles
+                size={6}
+                scale={[4, 2, 4]}//è la dimensiondel cubo che contiene le particelle 
+                position-y={1}
+                speed={0.2}
+            />
         </Center>
 
     </>
